@@ -33,8 +33,8 @@ const Seasons = () => {
         );
 
     }
-
-    const displayContent = errMsg != "" 
+    
+    const displayContent = errMsg !== "" 
                             ? <h1>Error: {errMsg}</h1>
                             : <SeasonDisplay lat={position.lat}/>  
 
