@@ -4,9 +4,9 @@ import SeasonDisplay from '../../components/SeasonDisplay';
 import Spinner from '../../components/Spinner';
 
 const Seasons = () => {
-    const [ position, setPosition ] = useState({lat: null, long: null});
-    const [errMsg, setErrMsg] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
+    let [ position, setPosition ] = useState({lat: null, long: null});
+    let [errMsg, setErrMsg] = useState("");
+    let [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
        console.log("Component Did Mount")
