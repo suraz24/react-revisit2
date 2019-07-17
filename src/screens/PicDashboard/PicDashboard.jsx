@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import axios from 'axios';
 
 import SearchBar from '../../components/SearchBar';
 import ImageList from '../../components/ImageList';
@@ -26,7 +25,7 @@ const PicDashboard = () => {
     return(
         <div className="ui container" style={{marginTop: '20px'}}>
             <SearchBar onSubmit={onSearchSubmit}/>
-            <ImageList />  
+            <ImageList images = {images} />  
         </div>
     );
 }
