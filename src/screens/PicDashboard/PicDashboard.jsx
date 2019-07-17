@@ -1,16 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
+
 import SearchBar from '../../components/SearchBar';
+import ImageList from '../../components/ImageList';
+import unsplash from '../../api/unsplash';
+
 
 
 const PicDashboard = () => {
 
-    const onSearchSubmit = searchValue =>{
-        console.log(searchValue);
+    let [images, setImages] = useState([]);
+
+    const onSearchSubmit = async searchValue =>{
+        if(searchValue !== null && searchValue.length > 0 ){
+            const response = await unsplash.get('/search/photos', {
+               params: { query: searchValue },
+            });
+        setImages(response.data.results)  
+        }
+        else{
+            console.log("Search term cannot be empty");
+        }
     }
 
     return(
         <div className="ui container" style={{marginTop: '20px'}}>
             <SearchBar onSubmit={onSearchSubmit}/>
+            <ImageList />  
         </div>
     );
 }
