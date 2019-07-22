@@ -11,15 +11,10 @@ const PicDashboard = () => {
     let [images, setImages] = useState([]);
 
     const onSearchSubmit = async searchValue =>{
-        if(searchValue !== null && searchValue.length > 0 ){
-            const response = await unsplash.get('/search/photos', {
-               params: { query: searchValue },
-            });
+        const response = await unsplash.get('/search/photos', {
+            params: { query: searchValue },
+        });
         setImages(response.data.results)  
-        }
-        else{
-            console.log("Search term cannot be empty");
-        }
     }
 
     return(

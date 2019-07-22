@@ -5,23 +5,22 @@ import Spinner from '../../components/Spinner';
 
 const Seasons = () => {
     let [ position, setPosition ] = useState({lat: null, long: null});
+
     let [errMsg, setErrMsg] = useState("");
     let [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
        console.log("Component Did Mount")
-       if(position.lat === null) 
-            getUserGeoLocation();
+       getUserGeoLocation();
        return () => {
            console.log("Component Did Unmount");
        }
-    }, [position])
+    }, [position.lat])
 
     const getUserGeoLocation = () => {
         setIsLoading(true);
         window.navigator.geolocation.getCurrentPosition(
             (pos) => {
-                console.log(pos);
                 setIsLoading(false);
                 setPosition({lat: pos.coords.latitude, long: pos.coords.longitude});
             },
