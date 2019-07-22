@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import SearchBar from '../../components/SearchBar';
-import ImageList from '../../components/ImageList';
+import ImageList from './components/ImageList';
 import unsplash from '../../api/unsplash';
 
 

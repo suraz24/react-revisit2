@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import SearchBar from '../../components/SearchBar';
-import VideoList from '../../components/VideoList';
+import VideoList from './components/VideoList';
 import youtube from '../../api/youtube';
-import VideoDetail from '../../components/VideoDetail';
+import VideoDetail from './components/VideoDetail';
 
 const VideoPlayer = () => {
     

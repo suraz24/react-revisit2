@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SeasonDisplay from '../../components/SeasonDisplay';
+import SeasonDisplay from './components/SeasonDisplay';
 
 import Spinner from '../../components/Spinner';
 
